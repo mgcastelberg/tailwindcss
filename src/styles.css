@@ -8,4 +8,23 @@
     h1 {
         @apply text-3xl font-bold my-3 text-amber-400;
     }
+
+    .mi-tabla thead tr {
+        @apply hidden md:table-row;
+    }
+    .mi-tabla header tr th {
+        @apply px-2 text-amber-500 dark:text-amber-200;
+    }
+    .mi-tabla tbody tr {
+        @apply py-3 md:py-0;
+    }
+    .mi-tabla tbody tr {
+        @apply flex flex-col items-center gap-2 md:table-row rounded-2xl md:rounded-none;
+    }
+    .mi-tabla tbody tr td {
+        @apply px-2 text-amber-500 dark:text-amber-200 leading-3;
+    }
+    .mi-tabla tbody tr td img {
+        @apply rounded-2xl h-16 w-16 md:h-20 md:w-20 m-2;
+    }
 }
