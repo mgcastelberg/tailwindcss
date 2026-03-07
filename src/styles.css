@@ -27,4 +27,14 @@
     .mi-tabla tbody tr td img {
         @apply rounded-2xl h-16 w-16 md:h-20 md:w-20 m-2;
     }
+
+    
+    .btn-primary {
+        @apply bg-violet-700 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded-4xl cursor-pointer;
+    }
+    /* .btn-primary {
+        background-color: var(--color-violet-500);
+        color: var(--color-white);
+        border-radius: var(--radius-2xl);
+    } */
 }
