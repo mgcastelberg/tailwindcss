@@ -38,3 +38,13 @@
         border-radius: var(--radius-2xl);
     } */
 }
+
+@layer components {
+    .form-control {
+        @apply rounded-md border border-gray-600 bg-transparent px-4 py-3 text-white transition-colors outline-none
+          invalid:border-pink-500 invalid:text-pink-500
+          placeholder:text-gray-600 placeholder:text-sm placeholder:italic
+          focus:border-sky-500 focus:outline-none focus:invalid:border-pink-500
+          disabled:cursor-not-allowed disabled:bg-gray-800 disabled:text-gray-500;
+    }
+}
