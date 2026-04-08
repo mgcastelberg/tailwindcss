@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-400: oklch(70.4% 0.191 22.216);
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-amber-200: oklch(92.4% 0.12 95.746);
     --color-amber-400: oklch(82.8% 0.189 84.429);
@@ -14,9 +15,13 @@
     --color-green-500: oklch(72.3% 0.219 149.579);
     --color-emerald-300: oklch(84.5% 0.143 164.978);
     --color-emerald-500: oklch(69.6% 0.17 162.48);
+    --color-sky-100: oklch(95.1% 0.026 236.824);
+    --color-sky-200: oklch(90.1% 0.058 230.902);
     --color-sky-400: oklch(74.6% 0.16 232.661);
     --color-sky-500: oklch(68.5% 0.169 237.323);
     --color-sky-600: oklch(58.8% 0.158 241.966);
+    --color-sky-700: oklch(50% 0.134 242.749);
+    --color-sky-900: oklch(39.1% 0.09 240.876);
     --color-blue-300: oklch(80.9% 0.105 251.813);
     --color-blue-400: oklch(70.7% 0.165 254.624);
     --color-blue-500: oklch(62.3% 0.214 259.815);
@@ -373,9 +378,6 @@
   .gap-1 {
     gap: calc(var(--spacing) * 1);
   }
-  .gap-2 {
-    gap: calc(var(--spacing) * 2);
-  }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
@@ -483,17 +485,14 @@
   .bg-indigo-500 {
     background-color: var(--color-indigo-500);
   }
-  .bg-indigo-500\/50 {
-    background-color: color-mix(in srgb, oklch(58.5% 0.233 277.117) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-indigo-500) 50%, transparent);
-    }
-  }
   .bg-pink-500 {
     background-color: var(--color-pink-500);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
+  }
+  .bg-sky-400 {
+    background-color: var(--color-sky-400);
   }
   .bg-sky-500 {
     background-color: var(--color-sky-500);
@@ -518,9 +517,6 @@
   }
   .object-cover {
     object-fit: cover;
-  }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
   }
   .p-3 {
     padding: calc(var(--spacing) * 3);
@@ -608,14 +604,14 @@
   .text-gray-500 {
     color: var(--color-gray-500);
   }
-  .text-indigo-200 {
-    color: var(--color-indigo-200);
-  }
-  .text-indigo-300 {
-    color: var(--color-indigo-300);
-  }
   .text-pink-500 {
     color: var(--color-pink-500);
+  }
+  .text-sky-400 {
+    color: var(--color-sky-400);
+  }
+  .text-sky-700 {
+    color: var(--color-sky-700);
   }
   .text-slate-300 {
     color: var(--color-slate-300);
@@ -680,6 +676,41 @@
     --tw-outline-style: none;
     outline-style: none;
   }
+  .group-hover\:text-sky-100 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-sky-100);
+      }
+    }
+  }
+  .group-hover\:text-sky-200 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-sky-200);
+      }
+    }
+  }
+  .group-hover\:text-sky-600 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-sky-600);
+      }
+    }
+  }
+  .group-hover\:text-sky-700 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-sky-700);
+      }
+    }
+  }
+  .group-hover\:text-sky-900 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-sky-900);
+      }
+    }
+  }
   .group-hover\/edit\:translate-x-0\.5 {
     &:is(:where(.group\/edit):hover *) {
       @media (hover: hover) {
@@ -693,6 +724,21 @@
       @media (hover: hover) {
         color: var(--color-gray-200);
       }
+    }
+  }
+  .group-has-\[a\]\:block {
+    &:is(:where(.group):has(*:is(a)) *) {
+      display: block;
+    }
+  }
+  .group-has-\[a\]\:text-red-400 {
+    &:is(:where(.group):has(*:is(a)) *) {
+      color: var(--color-red-400);
+    }
+  }
+  .group-has-\[a\]\:text-sky-400 {
+    &:is(:where(.group):has(*:is(a)) *) {
+      color: var(--color-sky-400);
     }
   }
   .peer-invalid\:visible {
@@ -889,14 +935,6 @@
   .disabled\:text-gray-500 {
     &:disabled {
       color: var(--color-gray-500);
-    }
-  }
-  .has-checked\:bg-indigo-500\/30 {
-    &:has(*:checked) {
-      background-color: color-mix(in srgb, oklch(58.5% 0.233 277.117) 30%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--color-indigo-500) 30%, transparent);
-      }
     }
   }
   .has-checked\:bg-indigo-500\/50 {
